@@ -7,9 +7,12 @@ var losses="";
 //define a variable set to 0 to add to when a user clicks an image
 var currentScore= 0;
 //add click events to photos to add to users current score variable 
-$(".crystalImages").on("click", function() {
-    value = $(this).val();
-    // var currentScore = value + currentScore;
+$(".crystal-button").on("click", function() {
+    buttonValue = $(this).val();
+    buttonValue = parseInt(buttonValue);
+    currentScore = buttonValue + currentScore;
+    console.log(currentScore);
+    // console.log(buttonValue);
     
     
 });
