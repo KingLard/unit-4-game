@@ -1,13 +1,18 @@
-$(document).ready(function() { 
+
 
 //define a variable for wins
-
+var wins="";
 //define a variable for losses
-
+var losses="";
 //define a variable set to 0 to add to when a user clicks an image
-
+var currentScore= 0;
 //add click events to photos to add to users current score variable 
-
+$(".crystalImages").on("click", function() {
+    value = $(this).val();
+    // var currentScore = value + currentScore;
+    
+    
+});
 //assign each image a random value of 1-12
 
 //get a random number 19-120
@@ -53,8 +58,6 @@ $(document).ready(function() {
 
 
 
-
-}
 
 
 
