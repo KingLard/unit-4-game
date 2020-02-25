@@ -11,10 +11,7 @@ $(".crystal-button").on("click", function() {
     buttonValue = $(this).val();
     buttonValue = parseInt(buttonValue);
     currentScore = buttonValue + currentScore;
-    console.log(currentScore);
-    // console.log(buttonValue);
-    
-    
+    $("#current-total").text(currentScore);
 });
 //assign each image a random value of 1-12
 
