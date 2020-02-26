@@ -40,8 +40,7 @@ function reset() {
     imageNumbers("#crystal-button-2");
     imageNumbers("#crystal-button-3");
     imageNumbers("#crystal-button-4");
-    // $("#current-total, #win-or-loss, #play-again, #random-number").empty();
-    // $(".crystal-button").removeData();
+ 
 
 
 }
