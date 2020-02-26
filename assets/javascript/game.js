@@ -24,12 +24,11 @@ function reset() {
 
 }
 
-function imageNumbers() {
+function imageNumbers(buttonID) {
     var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     pictureValues = numbers[Math.floor(Math.random() * numbers.length)] 
+    $(buttonID).attr("value", pictureValues);
 }
-
-
 
 
 
@@ -55,40 +54,31 @@ function imageNumbers() {
 //assign each image a random value of 1-12
 
 
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-var pictureValues = numbers[Math.floor(Math.random() * numbers.length)]
+
 
 
     
-$("#crystal-button-1").attr("value", pictureValues);
 
-
+//image 1 ------------------------------------------
+imageNumbers("#crystal-button-1");
 
 
 
 // image 2 ------------------------------------------
-
-var pictureValues = numbers[Math.floor(Math.random() * numbers.length)]
-
-$("#crystal-button-2").attr("value", pictureValues);
+imageNumbers("#crystal-button-2");
 
 
 
 //image 3 --------------------------------------------------
 
-var pictureValues = numbers[Math.floor(Math.random() * numbers.length)]
-
-$("#crystal-button-3").attr("value", pictureValues);
+imageNumbers("#crystal-button-3");
 
 
 // image 4 -------------------------------------------------
 
-var pictureValues = numbers[Math.floor(Math.random() * numbers.length)]
 
-$("#crystal-button-4").attr("value", pictureValues);
-
-
+imageNumbers("#crystal-button-4");
 
 
 //get a random number 19-120 ---------------------------------------
