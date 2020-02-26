@@ -1,12 +1,10 @@
 
-
-
 //define our variables we need for later in the application------------------------------------------------.
 
 //define a variable for wins
-var wins= 0;
+var wins = 0;
 //define a variable for losses
-var losses= 0;
+var losses = 0;
 //define a variable set to 0 to add to when a user clicks an image
 var currentScore = 0;
 
@@ -47,7 +45,6 @@ function reset() {
 
 
 }
-
 
 
 
@@ -134,7 +131,12 @@ $(".crystal-button").on("click", function() {
 
 });
 
-$("#play-again").on("click", reset());
+$("#play-again").on("click", function() {
+    reset();
+});
+
+
+
 
 
 
