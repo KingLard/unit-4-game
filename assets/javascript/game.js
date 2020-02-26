@@ -1,9 +1,9 @@
 
 
 //define a variable for wins
-var wins="";
+var wins= 0;
 //define a variable for losses
-var losses="";
+var losses= 0;
 //define a variable set to 0 to add to when a user clicks an image
 var currentScore = 0;
 
@@ -72,10 +72,15 @@ $(".crystal-button").on("click", function() {
         $("#win-or-loss").text("You Won!");
         $("#play-again").text("Play Again!");
         $("#exampleModal").modal("show");
-        console.log("score is matching");
+        wins = wins += 1;
+        $("#wins").text(wins);
     }
     else if (currentScore > goalNumber) {
-        console.log("you lost");
+        $("#win-or-loss").text("You Lost.");
+        $("#play-again").text("Try Again!");
+        $("#exampleModal").modal("show");
+        losses = losses += 1;
+        $("#losses").text(losses);
     }
 
 });
