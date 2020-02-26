@@ -7,18 +7,67 @@ var losses= 0;
 //define a variable set to 0 to add to when a user clicks an image
 var currentScore = 0;
 
+function reset() {
+    currentScore = 0;
+    //reset image numbers to different numbers
+
+    //reset goalNumber to a new number, print it to hud
+    var min = 19;
+    var max = 120;
+    var goalNumber = Math.floor(Math.random() * (+max - +min) + +min);
+    $("#random-number").text(goalNumber);
+
+    //empty all divs with id's we targeted during app run
+    $( "#current-total, #win-or-loss, #play-again").empty();
+
+    
+
+}
+
+function imageNumbers() {
+    var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    pictureValues = numbers[Math.floor(Math.random() * numbers.length)] 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //COME BACK AND MAKE THIS CODE DRY===============================================================================
 //assign each image a random value of 1-12
+
+
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 var pictureValues = numbers[Math.floor(Math.random() * numbers.length)]
 
+
+    
 $("#crystal-button-1").attr("value", pictureValues);
 
 
 
+
+
 // image 2 ------------------------------------------
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 var pictureValues = numbers[Math.floor(Math.random() * numbers.length)]
 
@@ -27,7 +76,6 @@ $("#crystal-button-2").attr("value", pictureValues);
 
 
 //image 3 --------------------------------------------------
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 var pictureValues = numbers[Math.floor(Math.random() * numbers.length)]
 
@@ -35,7 +83,6 @@ $("#crystal-button-3").attr("value", pictureValues);
 
 
 // image 4 -------------------------------------------------
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 var pictureValues = numbers[Math.floor(Math.random() * numbers.length)]
 
@@ -67,7 +114,7 @@ $(".crystal-button").on("click", function() {
 
     //compare current score variable to random number variable
 
-
+    //if current score = random number, add 1 to win variable, alert "you won" and "play again" button
     if (currentScore === goalNumber) {
         $("#win-or-loss").text("You Won!");
         $("#play-again").text("Play Again!");
@@ -75,6 +122,9 @@ $(".crystal-button").on("click", function() {
         wins = wins += 1;
         $("#wins").text(wins);
     }
+
+
+    //if current score > random number, add 1 to loss variable alert "you lost, try again"
     else if (currentScore > goalNumber) {
         $("#win-or-loss").text("You Lost.");
         $("#play-again").text("Try Again!");
@@ -83,8 +133,16 @@ $(".crystal-button").on("click", function() {
         $("#losses").text(losses);
     }
 
+
+    //restart game, keeping wins and loss variables the same, while shuffling image click values
+   
+
 });
 
+$("#play-again").on("click", function () {
+    reset();
+
+})
 
 
 
@@ -95,11 +153,7 @@ $(".crystal-button").on("click", function() {
 
 
 
-//if current score = random number, add 1 to win variable, alert "you won, keep going"
 
-//if current score > random number, add 1 to loss variable alert "you lost, try again"
-
-//restart game, keeping wins and loss variables the same, while shuffling image click values
 
 
 
