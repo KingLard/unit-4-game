@@ -1,5 +1,8 @@
 
 
+
+//define our variables we need for later in the application------------------------------------------------.
+
 //define a variable for wins
 var wins= 0;
 //define a variable for losses
@@ -7,22 +10,13 @@ var losses= 0;
 //define a variable set to 0 to add to when a user clicks an image
 var currentScore = 0;
 
-function reset() {
-    currentScore = 0;
-    //reset image numbers to different numbers
 
-    //reset goalNumber to a new number, print it to hud
-    var min = 19;
-    var max = 120;
-    var goalNumber = Math.floor(Math.random() * (+max - +min) + +min);
-    $("#random-number").text(goalNumber);
 
-    //empty all divs with id's we targeted during app run
-    $( "#current-total, #win-or-loss, #play-again").empty();
 
-    
 
-}
+
+//Assign functions for use later in the application--------------------------------------------------------
+//IMAGE NUMBER FUNCTION============================================================================
 
 function imageNumbers(buttonID) {
     var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -37,6 +31,31 @@ function imageNumbers(buttonID) {
 
 
 
+//RESET FUNCTION===========================================================================================
+function reset() {
+    currentScore = 0;
+    $("#current-total").text(currentScore);
+
+    goalNumber = Math.floor(Math.random() * (+max - +min) + +min);
+    $("#random-number").text(goalNumber);
+    imageNumbers("#crystal-button-1");
+    imageNumbers("#crystal-button-2");
+    imageNumbers("#crystal-button-3");
+    imageNumbers("#crystal-button-4");
+    // $("#current-total, #win-or-loss, #play-again, #random-number").empty();
+    // $(".crystal-button").removeData();
+
+
+}
+
+
+
+
+
+
+
+
+//START ACTUAL APPLICATION CODE===================================================================================
 
 
 
@@ -48,37 +67,21 @@ function imageNumbers(buttonID) {
 
 
 
-
-
-//COME BACK AND MAKE THIS CODE DRY===============================================================================
 //assign each image a random value of 1-12
-
-
-
-
-
-
-    
 
 //image 1 ------------------------------------------
 imageNumbers("#crystal-button-1");
 
 
-
 // image 2 ------------------------------------------
 imageNumbers("#crystal-button-2");
 
-
-
 //image 3 --------------------------------------------------
-
 imageNumbers("#crystal-button-3");
 
-
 // image 4 -------------------------------------------------
-
-
 imageNumbers("#crystal-button-4");
+
 
 
 //get a random number 19-120 ---------------------------------------
@@ -111,6 +114,7 @@ $(".crystal-button").on("click", function() {
         $("#exampleModal").modal("show");
         wins = wins += 1;
         $("#wins").text(wins);
+        
     }
 
 
@@ -121,6 +125,7 @@ $(".crystal-button").on("click", function() {
         $("#exampleModal").modal("show");
         losses = losses += 1;
         $("#losses").text(losses);
+       
     }
 
 
@@ -129,10 +134,10 @@ $(".crystal-button").on("click", function() {
 
 });
 
-$("#play-again").on("click", function () {
-    reset();
+$("#play-again").on("click", reset());
 
-})
+
+
 
 
 
